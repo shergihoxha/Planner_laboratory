@@ -1,7 +1,6 @@
-# Planner Settimanale in C++
+# Planner Settimanale
 
-Un semplice **planner settimanale da riga di comando**, sviluppato in C++, che consente di gestire attività quotidiane con **salvataggio su file** e **resoconto mensile automatico**.
-
+Progetto di laboratorio sviluppato in C++ che implementa un **planner settimanale da terminale** con salvataggio su file e test automatici.
 ---
 
 ## Funzionalità
@@ -13,24 +12,22 @@ Un semplice **planner settimanale da riga di comando**, sviluppato in C++, che c
 * ❌ Rimozione attività
 * 💾 Salvataggio persistente su file
 * 📊 Resoconto mensile automatico con percentuali
+* **Test automatici con GoogleTest**
 
 ---
 
 ## Struttura del progetto
 
 ```
-PlannerSettimanale/
-│
-├── Activity.h
-├── Activity.cpp
-│
-├── Planner.h
-├── Planner.cpp
-│
+Planner_laboratory/
+├── CMakeLists.txt
 ├── main.cpp
-│
-├── planner_data.txt        // generato automaticamente
-├── monthly_report.txt      // generato automaticamente
+├── Activity.h / Activity.cpp
+├── Planner.h / Planner.cpp
+├── tests/
+│ ├── main_test.cpp
+│ ├── test_activity.cpp
+│ └── test_planner.cpp
 └── README.md
 ```
 
@@ -38,25 +35,36 @@ PlannerSettimanale/
 
 ## Compilazione ed esecuzione
 
-### Compilazione (GCC)
-
+### Clonare il repository
 ```bash
-g++ main.cpp Planner.cpp Activity.cpp -o planner
+git clone https://github.com/<username>/Planner_laboratory.git
+cd Planner_laboratory
 ```
+### Build con CMake
 
-### Esecuzione
+cmake -S . -B cmake-build-debug
+cmake --build cmake-build-debug
 
-```bash
-./planner
-```
+### Avviare il programma
 
+./Planner_app
 ---
 
-## Requisiti
+### Esecuzione dei test
 
-* Compilatore C++ (GCC / Clang)
-* Standard consigliato: **C++11 o superiore**
+I test sono realizzati con GoogleTest.
 
+./Planner_tests
+---
+
+Oppure direttamente da CLion selezionando il target *Planner_tests*
+
+## Tecnologie utilizzate
+
+- **Linguaggio:** C++20  
+- **Build system:** CMake  
+- **Testing:** GoogleTest  
+- **IDE:** CLion
 ---
 
 ## Possibili estensioni future
